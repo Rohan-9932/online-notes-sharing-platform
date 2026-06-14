@@ -1,4 +1,5 @@
 # Online Notes Sharing Platform 🚀
+[![Live Demo](https://img.shields.io/badge/Demo-Live%20Project-green?style=for-the-badge&logo=github)](https://github.com/Rohan-9932/online-notes-sharing-platform)
 
 A full-stack web application designed for students and creators to upload, manage, and download academic resources securely.
 
