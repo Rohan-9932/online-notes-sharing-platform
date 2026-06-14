@@ -1,0 +1,248 @@
+ /* --- Sign Up Wrapper --- */
+/* --- আপনার signup.css ফাইলের একদম উপরে এই অংশটি পরিবর্তন করুন --- */
+.signup-wrapper {
+    min-height: calc(100vh - 120px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    
+    /* 🔴 শুধু নিচের এই ৩টি লাইন নতুন যোগ করো বা পরিবর্তন করো */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('../image/hero-bg.png'); /* 👈 এখানে তোমার ব্যাকগ্রাউন্ড ছবির নাম দেবে */
+                
+    background-size: cover;       /* ছবি যেন পুরো স্ক্রিন জুড়ে পারফেক্টলি বসে */
+    background-position: center;  /* ছবি যেন একদম মাঝখানে থাকে */
+    background-attachment: fixed; /* স্ক্রোল করলেও ব্যাকগ্রাউন্ড ছবি এক জায়গায় আটকে থাকবে */
+}
+
+/* Form Main Container Box */
+.signup-box {
+    background: #fff;
+    max-width: 500px;
+    width: 100%;
+    padding: 45px 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+    text-align: left;
+}
+
+/* Header Text */
+.signup-header h2 {
+    color: #002147; /* নেভি ব্লু ব্র্যান্ড কালার */
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.signup-header p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 35px;
+}
+
+/* Input Groups */
+.input-group {
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* Input Field Customization with Icons */
+.input-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-field i {
+    position: absolute;
+    left: 15px;
+    color: #002147;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 12px 15px 12px 45px; /* আইকনের জন্য বামপাশে স্পেস */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    outline: none;
+    color: #333;
+    transition: 0.3s ease;
+}
+
+/* ফোকাস বা ক্লিক করলে আপনার থিমের অরেঞ্জ কালার বর্ডার হবে */
+.input-field input:focus {
+    border-color: #ff4500;
+    box-shadow: 0 0 8px rgba(255, 69, 0, 0.15);
+}
+
+.input-field input:focus + i {
+    color: #ff4500;
+}
+
+/* Terms Checkbox */
+.terms-condition {
+    margin: 15px 0 25px 0;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: #555;
+    cursor: pointer;
+}
+
+.checkbox-label input {
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+.checkbox-label a {
+    color: #ff4500;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.checkbox-label a:hover {
+    text-decoration: underline;
+}
+
+/* Button (হোভার করলে কালো থিম হবে) */
+.signup-btn {
+    background: #ff4500;
+    color: #fff;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 69, 0, 0.2);
+}
+
+.signup-btn:hover {
+    background: #1a1a1a; /* ডার্ক থিমের কালো রঙ */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   New Updates: Social Sign Up Buttons Styling
+   ========================================================================== */
+.social-signup-container {
+    margin-top: 25px;
+    text-align: center;
+}
+
+/* "or sign up with" ডিভাইডার লাইন */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #777;
+    font-size: 13px;
+}
+
+.divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+}
+
+.divider:not(:empty)::before {
+    margin-right: .5em;
+}
+
+.divider:not(:empty)::after {
+    margin-left: .5em;
+}
+
+/* সোশ্যাল বাটন গ্রুপ লেআউট */
+.social-btn-group {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.social-login-btn {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    transition: 0.3s ease;
+}
+
+/* প্রতিটা ব্র্যান্ডের নিজস্ব কালার */
+.fb-btn { background-color: #1877f2; } /* Facebook Blue */
+.tw-btn { background-color: #111111; } /* X / Twitter Black */
+.gh-btn { background-color: #24292e; } /* GitHub Dark Gray */
+
+/* হোভার ইফেক্ট */
+.social-login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+    opacity: 0.9;
+}
+
+/* Redirect text */
+.login-redirect {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+    color: #666;
+}
+
+.login-redirect a {
+    color: #ff4500;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-redirect a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Responsive Queries (মোবাইল ও ছোট স্ক্রিনের জন্য)
+   ========================================================================== */
+@media (max-width: 576px) {
+    .signup-box {
+        padding: 30px 20px;
+    }
+    .signup-header h2 {
+        font-size: 24px;
+    }
+    .social-btn-group {
+        flex-direction: column; /* মোবাইলে বাটনগুলো একটার নিচে একটা আসবে */
+        gap: 8px;
+    }
+    .social-login-btn {
+        padding: 12px;
+    }
+}

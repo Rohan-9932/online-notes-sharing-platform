@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ONLINE NOTE IS HARE</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="contact-info">
+        <span><i class="fas fa-envelope"></i> info@NOTES.com</span>
+        <span><i class="fas fa-phone"></i> +123-456-789</span>
+      </div>
+      <div class="social-links">
+        Follow us: <i class="fab fa-facebook"></i>
+        <i class="fab fa-twitter"></i> <i class="fab fa-linkedin"></i>
+      </div>
+    </div>
+
+    <nav>
+      <div class="container nav-container">
+        <div class="logo">ONLINE<span>NOTES.</span></div>
+        <ul class="nav-links">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="Addser.html">UPLOAD NOTE</a></li>
+          <li><a href="#">ABOUT US</a></li>
+          <li><a href="#">EVENTS</a></li>
+          <li><a href="#">BLOG</a></li>
+          <li><a href="#">CONTACT</a></li>
+        </ul>
+        <div class="nav-icons">
+          <i class="fas fa-search"></i>
+          <i class="fas fa-bars mobile-menu"></i>
+
+          <div
+            id="user-profile-zone"
+            style="
+              display: inline-block;
+              margin-left: 15px;
+              font-family: &quot;Poppins&quot;, sans-serif;
+              font-size: 14px;
+            "
+          ></div>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <h1>WELCOME TO ONLINE NOTE POINT</h1>
+          <p>
+            Welcome to the open space where students, creators, and learners
+            share their handwritten notes with the world...
+          </p>
+
+          <div class="hero-btns">
+            <a href="#" class="btn btn-dark">READ MORE</a>
+            <a href="Addser.html" class="btn btn-red">GET STARTED NOW</a>
+          </div>
+
+          <div class="search-container">
+            <div class="search-box">
+              <input
+                type="text"
+                id="hero-search-input"
+                placeholder="Search notes by title, subject, semester or author..."
+              />
+              <button id="hero-search-btn">
+                <i class="fas fa-search"></i> Search
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="notes-section">
+      <div class="container">
+        <h2 class="section-title">EXPLORE NOTES</h2>
+        <div class="underline"></div>
+
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-filter="all">All Notes</button>
+          <button class="filter-btn" data-filter="trending">
+            Trending Notes
+          </button>
+          <button class="filter-btn" data-filter="free">Free Notes</button>
+          <button class="filter-btn" data-filter="paid">Paid Notes</button>
+        </div>
+
+        <div class="notes-grid">
+          <div class="note-card" data-type="free" data-trending="true">
+            <div class="card-header">
+              <i class="fas fa-file-pdf pdf-icon"></i>
+              <span class="badge badge-free">FREE</span>
+            </div>
+            <div class="card-body">
+              <h3 class="note-title">DBMS Complete Notes</h3>
+              <p class="note-info"><strong>Subject:</strong> DBMS</p>
+              <p class="note-info"><strong>Semester:</strong> 4</p>
+              <p class="note-info"><strong>By:</strong> Rohan</p>
+            </div>
+            <div class="card-footer">
+              <span class="price-text">Free of Cost</span>
+              <button
+                onclick="openEmailModal('#')"
+                class="card-btn btn-download"
+                style="border: none; cursor: pointer"
+              >
+                <i class="fas fa-download"></i> Download
+              </button>
+            </div>
+          </div>
+
+          <div class="note-card" data-type="paid" data-trending="false">
+            <div class="card-header">
+              <i class="fas fa-file-powerpoint ppt-icon"></i>
+              <span class="badge badge-paid">PAID</span>
+            </div>
+            <div class="card-body">
+              <h3 class="note-title">Computer Networks Core</h3>
+              <p class="note-info"><strong>Subject:</strong> Networking</p>
+              <p class="note-info"><strong>Semester:</strong> 5</p>
+              <p class="note-info"><strong>By:</strong> Ayan</p>
+            </div>
+            <div class="card-footer">
+              <span class="price-text paid-price">₹99</span>
+              <button
+                onclick="openPaymentModal(9999, 'Computer Networks Core', 99)"
+                class="card-btn btn-buy"
+                style="border: none; cursor: pointer"
+              >
+                <i class="fas fa-shopping-cart"></i> Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="demoPaymentModal" class="payment-modal">
+      <div class="modal-content">
+        <div class="modal-header-icon"><i class="fas fa-shield-alt"></i></div>
+        <div class="modal-title">DEMO PAYMENT GATEWAY</div>
+        <p style="font-size: 13px; color: #666">
+          Secure sandbox testing environment for Rohan's Project
+        </p>
+        <div class="payment-details">
+          <p
+            id="modal-note-title"
+            style="font-weight: 600; margin-bottom: 5px"
+          ></p>
+          <p
+            id="modal-note-price"
+            style="color: #e03333; font-weight: 700; font-size: 16px"
+          ></p>
+        </div>
+        <button id="btnConfirmPayment" class="btn-pay-confirm">
+          <i class="fas fa-check-circle"></i> Pay Successfully (Demo)
+        </button>
+        <button onclick="closePaymentModal()" class="btn-pay-close">
+          Cancel Payment
+        </button>
+      </div>
+    </div>
+
+    <div id="demoEmailModal" class="email-modal">
+      <div class="modal-content" style="border-top: 5px solid #2ecc71">
+        <div class="modal-header-icon" style="color: #2ecc71">
+          <i class="fas fa-envelope-open-text"></i>
+        </div>
+        <div class="modal-title">FREE NOTE DOWNLOAD</div>
+        <p style="font-size: 13px; color: #666">
+          Enter your email address to unlock the direct download link
+        </p>
+
+        <input
+          type="email"
+          id="userDownloadEmail"
+          class="email-modal-input"
+          placeholder="name@example.com"
+          required
+        />
+
+        <button id="btnConfirmEmailDownload" class="btn-pay-confirm">
+          <i class="fas fa-paper-plane"></i> Send Link & Download
+        </button>
+        <button onclick="closeEmailModal()" class="btn-pay-close">
+          Cancel
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const searchInput = document.getElementById("hero-search-input");
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const notesGrid = document.querySelector(".notes-grid");
+
+      let selectedNoteId = null;
+      let selectedDownloadUrl = ""; // ফ্রি ফাইলের পাথ সেভ রাখার ভ্যারিয়েবল
+
+      // ==========================================================================
+      // ১. ডেটাবেস থেকে সব নোট এনে হোম পেজে ডাইনামিকালি দেখানো
+      // ==========================================================================
+      async function fetchDatabaseNotes() {
+        try {
+          const purchaseRes = await fetch("/api/my-purchases");
+          const purchasedIds = await purchaseRes.json();
+
+          const response = await fetch("/api/get-notes");
+          const notes = await response.json();
+
+          notes.forEach((note) => {
+            const currentId = note.id || note.note_id;
+
+            const card = document.createElement("div");
+            card.className = "note-card";
+            card.setAttribute("data-type", note.type);
+            card.setAttribute("data-trending", "false");
+
+            const isFree = note.type === "free";
+            const hasPurchased = purchasedIds.includes(currentId);
+
+            const badgeClass = isFree ? "badge-free" : "badge-paid";
+            const badgeText = isFree ? "FREE" : "PAID";
+            const priceText = isFree ? "Free of Cost" : `\u20B9${note.price}`;
+
+            let btnClass, btnText, footerActionElement;
+            const actionUrl = note.file_path ? note.file_path : "#";
+
+            if (isFree || hasPurchased) {
+              btnClass = "btn-download";
+              btnText = '<i class="fas fa-download"></i> Download';
+              footerActionElement = document.createElement("button");
+              footerActionElement.className = `card-btn ${btnClass}`;
+              footerActionElement.style = "border:none; cursor:pointer;";
+              footerActionElement.innerHTML = btnText;
+
+              // 💡 ফ্রি নোট অথবা কেনা নোটে ক্লিক করলে নতুন ইমেইল উইন্ডো ওপেন হবে
+              footerActionElement.addEventListener("click", () => {
+                openEmailModal(actionUrl);
+              });
+            } else {
+              btnClass = "btn-buy";
+              btnText = '<i class="fas fa-shopping-cart"></i> Buy Now';
+              footerActionElement = document.createElement("button");
+              footerActionElement.className = `card-btn ${btnClass}`;
+              footerActionElement.style = "border:none; cursor:pointer;";
+              footerActionElement.innerHTML = btnText;
+              footerActionElement.addEventListener("click", () => {
+                openPaymentModal(currentId, note.title, note.price);
+              });
+            }
+
+            card.innerHTML = `
+                <div class="card-header">
+                    <i class="fas fa-file-pdf pdf-icon"></i>
+                    <span class="badge ${badgeClass}">${badgeText}</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="note-title">${note.title}</h3>
+                    <p class="note-info"><strong>Subject:</strong> ${note.subject}</p>
+                    <p class="note-info"><strong>Semester:</strong> ${note.semester}</p>
+                    <p class="note-info"><strong>Description:</strong> ${note.description || "No description available"}</p>
+                </div>
+                <div class="card-footer">
+                    <span class="price-text ${!isFree ? "paid-price" : ""} ${hasPurchased ? "free-of-cost" : ""}">${hasPurchased ? "Unlocked" : priceText}</span>
+                    <div class="btn-target-zone"></div>
+                </div>
+            `;
+
+            card
+              .querySelector(".btn-target-zone")
+              .appendChild(footerActionElement);
+            notesGrid.insertBefore(card, notesGrid.firstChild);
+          });
+
+          refreshFilterLogic();
+        } catch (error) {
+          console.error("Error fetching notes from database:", error);
+        }
+      }
+
+      // ==========================================================================
+      // ২. ডেমো পেমেন্ট মডাল হ্যান্ডলার
+      // ==========================================================================
+      function openPaymentModal(noteId, title, price) {
+        selectedNoteId = noteId;
+        document.getElementById("modal-note-title").innerText =
+          `Item: ${title}`;
+        document.getElementById("modal-note-price").innerText =
+          `Amount: \u20B9${price}`;
+        document.getElementById("demoPaymentModal").style.display = "flex";
+      }
+
+      function closePaymentModal() {
+        document.getElementById("demoPaymentModal").style.display = "none";
+        selectedNoteId = null;
+      }
+
+      document
+        .getElementById("btnConfirmPayment")
+        .addEventListener("click", async () => {
+          if (!selectedNoteId) return;
+          try {
+            const response = await fetch("/api/demo-pay", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ noteId: selectedNoteId }),
+            });
+            const data = await response.json();
+            if (response.ok && data.success) {
+              alert(
+                "🎉 Mock Payment Successful! The paid note is now unlocked.",
+              );
+              closePaymentModal();
+              location.reload();
+            } else {
+              alert(
+                data.error || "Payment Simulation Failed. Please Login First.",
+              );
+            }
+          } catch (error) {
+            console.error("Payment error:", error);
+          }
+        });
+
+      // ==========================================================================
+      // 💡 নতুন আপডেট: ফ্রি ইমেইল মডাল ওপেন, ক্লোজ এবং সাবমিট লজিক
+      // ==========================================================================
+      function openEmailModal(fileUrl) {
+        selectedDownloadUrl = fileUrl;
+        document.getElementById("userDownloadEmail").value = ""; // আগের ইমেইল রিসেট
+        document.getElementById("demoEmailModal").style.display = "flex";
+      }
+
+      function closeEmailModal() {
+        document.getElementById("demoEmailModal").style.display = "none";
+        selectedDownloadUrl = "";
+      }
+
+      // ইমেইল পাঠিয়ে ডাউনলোড করার কনফার্ম বাটন ট্র্রিগার
+      document
+        .getElementById("btnConfirmEmailDownload")
+        .addEventListener("click", () => {
+          const emailInput = document
+            .getElementById("userDownloadEmail")
+            .value.trim();
+
+          // বেসিক ইমেইল ভ্যালিডেশন চেক
+          if (!emailInput || !emailInput.includes("@")) {
+            alert("Please enter a valid email address!");
+            return;
+          }
+
+          alert(
+            `🚀 Download Link successfully sent to: ${emailInput}\nClick OK to start downloading file.`,
+          );
+
+          // মডাল উইন্ডো বন্ধ করে নতুন ট্যাবে ফাইলটি ওপেন/ডাউনলোড করা হচ্ছে
+          const targetUrl = selectedDownloadUrl;
+          closeEmailModal();
+          window.open(targetUrl, "_blank");
+        });
+
+      // ==========================================================================
+      // ৩. সেশন চেক ফাংশন
+      // ==========================================================================
+      async function checkUserSession() {
+        try {
+          const response = await fetch("/api/current-user");
+          const data = await response.json();
+          const profileZone = document.getElementById("user-profile-zone");
+
+          if (data.loggedIn) {
+            profileZone.innerHTML = `
+              <span style="color: #333; font-weight: 600; margin-right: 12px;">
+                <i class="fas fa-user-circle"></i> Hi, ${data.user.fullname.split(" ")[0]}
+              </span>
+              <a href="dashboard.html" style="color: #007bff; font-weight: 600; text-decoration: none; border: 1px solid #007bff; padding: 4px 10px; border-radius: 4px; margin-right: 8px; transition: 0.3s;">
+                Dashboard
+              </a>
+              <a href="/api/logout" style="color: #ff4d4d; font-weight: 600; text-decoration: none; border: 1px solid #ff4d4d; padding: 4px 10px; border-radius: 4px; transition: 0.3s;">
+                Logout
+              </a>
+            `;
+          } else {
+            profileZone.innerHTML = `
+              <a href="/login.html" style="color: white; font-weight: 600; text-decoration: none; background: #ff4d4d; padding: 5px 12px; border-radius: 4px;">
+                Login
+              </a>
+            `;
+          }
+        } catch (error) {
+          console.error("Error checking user session:", error);
+        }
+      }
+
+      window.addEventListener("DOMContentLoaded", () => {
+        fetchDatabaseNotes();
+        checkUserSession();
+      });
+
+      // ==========================================================================
+      // ৪. ফিল্টার লজিক
+      // ==========================================================================
+      function filterNotes() {
+        const searchText = searchInput.value.toLowerCase().trim();
+        const activeFilter = document
+          .querySelector(".filter-btn.active")
+          .getAttribute("data-filter");
+        const currentCards = document.querySelectorAll(".note-card");
+
+        currentCards.forEach((card) => {
+          const title = card.querySelector(".note-title")
+            ? card.querySelector(".note-title").textContent.toLowerCase()
+            : "";
+          const infoElements = card.querySelectorAll(".note-info");
+          let infoText = "";
+          infoElements.forEach(
+            (info) => (infoText += info.textContent.toLowerCase() + " "),
+          );
+
+          const combinedText = title + " " + infoText;
+          const matchesSearch = combinedText.includes(searchText);
+          const cardType = card.getAttribute("data-type");
+          const isTrending = card.getAttribute("data-trending") === "true";
+
+          let matchesCategory = false;
+          if (activeFilter === "all") matchesCategory = true;
+          else if (activeFilter === "free" && cardType === "free")
+            matchesCategory = true;
+          else if (activeFilter === "paid" && cardType === "paid")
+            matchesCategory = true;
+          else if (activeFilter === "trending" && isTrending)
+            matchesCategory = true;
+
+          if (matchesSearch && matchesCategory) {
+            card.style.display = "";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      }
+
+      function refreshFilterLogic() {
+        searchInput.removeEventListener("keyup", filterNotes);
+        searchInput.addEventListener("keyup", filterNotes);
+        const searchBtn = document.getElementById("hero-search-btn");
+        searchBtn.replaceWith(searchBtn.cloneNode(true));
+        document
+          .getElementById("hero-search-btn")
+          .addEventListener("click", filterNotes);
+
+        filterButtons.forEach((button) => {
+          button.replaceWith(button.cloneNode(true));
+        });
+
+        const newFilterButtons = document.querySelectorAll(".filter-btn");
+        newFilterButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            document
+              .querySelectorAll(".filter-btn")
+              .forEach((btn) => btn.classList.remove("active"));
+            this.classList.add("active");
+            filterNotes();
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

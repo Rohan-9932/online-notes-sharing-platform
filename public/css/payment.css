@@ -1,0 +1,84 @@
+.payment-wrapper {
+    background: #1a1a1a; /* আপনার ডার্ক থিমের সাথে ম্যাচিং ব্যাকগ্রাউন্ড */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.payment-box {
+    background: #fff;
+    max-width: 450px;
+    width: 100%;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+.payment-header h2 { color: #002147; font-size: 24px; font-weight: 700; }
+.payment-header h2 i { color: #2ecc71; }
+.payment-header p { color: #666; font-size: 13px; margin-bottom: 25px; }
+
+.order-summary {
+    background: #f4f7f6;
+    padding: 15px 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    color: #002147;
+    margin-bottom: 25px;
+    border-left: 4px solid #ff4500;
+}
+
+.item-price { color: #ff4500; font-size: 18px; }
+
+.method-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.method-option i { width: 20px; font-size: 16px; }
+.purple-icon { color: #6f42c1; }
+.blue-icon { color: #007bff; }
+
+.qr-placeholder {
+    margin: 25px 0;
+    color: #333;
+}
+.qr-placeholder p { font-size: 12px; color: #666; margin-top: 5px; }
+
+.pay-btn {
+    background: #ff4500;
+    color: #fff;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.pay-btn:hover { background: #e03d00; }
+
+.cancel-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #666;
+    font-size: 13px;
+    text-decoration: none;
+}
+.cancel-link:hover { color: #ff4500; }

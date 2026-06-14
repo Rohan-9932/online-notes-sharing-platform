@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Update Details</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/AddUser.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="contact-info">
+        <span><i class="fas fa-envelope"></i> info@NOTES.com</span>
+        <span><i class="fas fa-phone"></i> +123-456-789</span>
+      </div>
+      <div class="social-links">
+        Follow us: <i class="fab fa-facebook"></i>
+        <i class="fab fa-twitter"></i> <i class="fab fa-linkedin"></i>
+      </div>
+    </div>
+
+    <nav>
+      <div class="container nav-container">
+        <div class="logo">ONLINE<span>NOTES.</span></div>
+        <ul class="nav-links">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="#">ABOUT US</a></li>
+          <li><a href="notes.html">COURSES</a></li>
+          <li><a href="#">EVENTS</a></li>
+          <li><a href="#">BLOG</a></li>
+          <li><a href="#">CONTACT</a></li>
+        </ul>
+        <div class="nav-icons">
+          <i class="fas fa-search"></i>
+          <i class="fas fa-bars mobile-menu"></i>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main-wrapper">
+      <div class="form-box">
+        <h1 class="main-heading">User Update Details</h1>
+        <p class="sub-text">
+          Please fill out the information below to upload your materials.
+        </p>
+
+        <form action="/api/notes" method="POST" enctype="multipart/form-data">
+          <div class="form-row">
+            <div class="input-group">
+              <label>Title</label>
+              <input
+                type="text"
+                name="title"
+                placeholder="Enter note title"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label>Subject</label>
+              <input
+                type="text"
+                name="subject"
+                placeholder="Enter subject name"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="input-group">
+              <label>Semester</label>
+              <select name="semester" required>
+                <option value="" disabled selected>Select Semester</option>
+                <option value="1">Semester 1</option>
+                <option value="2">Semester 2</option>
+                <option value="3">Semester 3</option>
+                <option value="4">Semester 4</option>
+                <option value="5">Semester 5</option>
+                <option value="6">Semester 6</option>
+                <option value="7">Semester 7</option>
+                <option value="8">Semester 8</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label>Choose File (PDF, PPT, Word)</label>
+              <input
+                type="file"
+                name="noteFile"
+                accept=".pdf, .ppt, .pptx, .doc, .docx"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-row full-width">
+            <div class="input-group">
+              <label>Description</label>
+              <textarea
+                name="description"
+                rows="4"
+                placeholder="Briefly describe your notes..."
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="input-group">
+              <label>Free / Paid</label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input
+                    type="radio"
+                    name="payment"
+                    value="free"
+                    checked
+                    onclick="togglePrice(false)"
+                  />
+                  Free
+                </label>
+                <label class="radio-label">
+                  <input
+                    type="radio"
+                    name="payment"
+                    value="paid"
+                    onclick="togglePrice(true)"
+                  />
+                  Paid
+                </label>
+              </div>
+            </div>
+            <div class="input-group" id="price-field" style="opacity: 0.5">
+              <label>Price (₹)</label>
+              <input
+                type="number"
+                name="price"
+                id="price-input"
+                placeholder="Enter amount"
+                disabled
+              />
+            </div>
+          </div>
+
+          <div class="btn-container">
+            <button type="submit" class="upload-btn">UPLOAD DETAILS</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      function togglePrice(isPaid) {
+        const priceInput = document.getElementById("price-input");
+        const priceField = document.getElementById("price-field");
+        if (isPaid) {
+          priceInput.disabled = false;
+          priceField.style.opacity = "1";
+        } else {
+          priceInput.disabled = true;
+          priceInput.value = "";
+          priceField.style.opacity = "0.5";
+        }
+      }
+    </script>
+  </body>
+</html>

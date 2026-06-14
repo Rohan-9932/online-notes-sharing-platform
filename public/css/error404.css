@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #002147; /* আপনার থিমের নেভি ব্লু ব্যাকগ্রাউন্ড */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.error-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.error-content {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.error-code {
+    font-size: 130px;
+    font-weight: 700;
+    line-height: 1;
+    color: #ff4500; /* থিমের রেডিয়েন্ট অরেঞ্জ-রেড */
+    letter-spacing: 2px;
+}
+
+.error-icon {
+    font-size: 45px;
+    color: #fff;
+    margin: 15px 0;
+    animation: float 2s ease-in-out infinite;
+}
+
+.error-message {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.error-desc {
+    font-size: 15px;
+    color: #aaa;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+.back-home-btn {
+    text-decoration: none;
+    background: #ff4500;
+    color: #fff;
+    padding: 12px 30px;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 50px;
+    transition: 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 5px 15px rgba(255, 69, 0, 0.3);
+}
+
+.back-home-btn:hover {
+    background: #e03d00;
+    transform: translateY(-3px);
+}
+
+/* আইকন ফ্লোটিং অ্যানিমেশন */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Online Notes</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/singup.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="contact-info">
+        <span><i class="fas fa-envelope"></i> info@NOTES.com</span>
+        <span><i class="fas fa-phone"></i> +123-456-789</span>
+      </div>
+      <div class="social-links">
+        Follow us:
+        <a href="#" style="color: #fff; margin-left: 10px"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a href="#" style="color: #fff; margin-left: 10px"
+          ><i class="fab fa-x-twitter"></i
+        ></a>
+        <a href="#" style="color: #fff; margin-left: 10px"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+      </div>
+    </div>
+
+    <nav>
+      <div class="container nav-container">
+        <div class="logo">ONLINE<span>NOTES.</span></div>
+        <ul class="nav-links">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="#">ABOUT US</a></li>
+          <li><a href="notes.html">COURSES</a></li>
+          <li><a href="#">EVENTS</a></li>
+          <li><a href="#">BLOG</a></li>
+          <li><a href="#">CONTACT</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="signup-wrapper">
+      <div class="signup-box">
+        <div class="signup-header">
+          <h2>Welcome Back</h2>
+          <p>Login to access your notes and dashboard</p>
+        </div>
+
+        <form action="/api/login" method="POST" class="signup-form">
+          <div class="input-group">
+            <label for="email">Email Address</label>
+            <div class="input-field">
+              <i class="fas fa-envelope"></i>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your registered email"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="password">Password</label>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+          </div>
+
+          <button type="submit" class="signup-btn">LOGIN NOW</button>
+        </form>
+
+        <div class="social-signup-container">
+          <div class="divider"><span>or login with</span></div>
+          <div class="social-btn-group">
+            <a href="javascript:void(0);" class="social-login-btn fb-btn"
+              ><i class="fab fa-facebook-f"></i> Facebook</a
+            >
+            <a href="javascript:void(0);" class="social-login-btn tw-btn"
+              ><i class="fab fa-x-twitter"></i> Twitter</a
+            >
+            <a href="javascript:void(0);" class="social-login-btn gh-btn"
+              ><i class="fab fa-github"></i> GitHub</a
+            >
+          </div>
+        </div>
+
+        <div class="login-redirect">
+          <p>Don't have an account? <a href="signup.html">Register Here</a></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
