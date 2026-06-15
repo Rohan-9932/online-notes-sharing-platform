@@ -23,7 +23,7 @@ app.use(
   }),
 );
 
-app.use(express.static(path.join(__dirname,"public")));
+app.use(express.static(path.join(__dirname, "public")));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 const dir = "./uploads";
@@ -181,7 +181,7 @@ app.get("/api/logout", (req, res) => {
 });
 
 // ==========================================================================
-// API ROUTE: শুধুমাত্র লগইন করা ইউজারের আপলোড করা নোটগুলো নিয়ে আসা
+// API ROUTE: শুধুমাত্র লগইন করা ইউজারের আপলোড করা নোটগুলো নিয়ে আসা
 // ==========================================================================
 app.get("/api/my-notes", (req, res) => {
   if (!req.session.user) {
@@ -259,11 +259,11 @@ app.get("/api/my-purchases", (req, res) => {
 });
 
 // ==========================================================================
-// ৬. নোড সার্ভার লিসেনিং পোর্ট
+// ৬. নোড সার্ভার লিসেনিং পোর্ট (ডায়নামিক পোর্ট কনফিগারেশন)
 // ==========================================================================
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; // 💡 লাইভ হোস্টিং সার্ভারের জন্য এটা জরুরি
 app.listen(PORT, () => {
   console.log(`\n=========================================================`);
-  console.log(`🚀 Secure Server running smoothly on http://localhost:${PORT}`);
+  console.log(`🚀 Secure Server running smoothly on Port: ${PORT}`);
   console.log(`=========================================================`);
 });

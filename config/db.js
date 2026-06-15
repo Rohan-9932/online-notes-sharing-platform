@@ -1,18 +1,21 @@
 const mysql = require("mysql2");
 
-const connection = mysql.createConnection({
-  host: "localhost",
-  user: "newuser", // 👈 'root' বদলে 'newuser' করে দেওয়া হলো
-  password: "1234", // আপনার নতুন ইউজারের পাসওয়ার্ড
-  database: "online_notes_system",
+const db = mysql.createConnection({
+  host: "btlv8zm3hhf6kqhebt5m-mysql.services.clever-cloud.com",
+  user: "ujr5bwaq2td6trpo",
+  password: "QE4Z0Hk730z0v6Z1Y5a4",
+  database: "btlv8zm3hhf6kqhebt5m",
+  port: 3306,
 });
 
-connection.connect((err) => {
+db.connect((err) => {
   if (err) {
-    console.log("Database connection failed: ", err);
-  } else {
-    console.log("Database Connected Successfully!");
+    console.error("❌ Online Database Connection Failed: ", err.message);
+    return;
   }
+  console.log(
+    "✅ Successfully connected to Online MySQL Database on Clever Cloud!",
+  );
 });
 
-module.exports = connection;
+module.exports = db;
